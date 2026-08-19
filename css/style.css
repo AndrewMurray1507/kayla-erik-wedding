@@ -1,0 +1,597 @@
+/* =========================================================
+   Kayla & Erik — Wedding Website
+   Palette: cream, baby blue, sandy brown
+   ========================================================= */
+
+:root {
+  --cream: #faf5ea;
+  --cream-dark: #f0e6d2;
+  --baby-blue: #b9d6e3;
+  --baby-blue-dark: #8fb9cd;
+  --sandy-brown: #c99162;
+  --sandy-brown-dark: #a8734a;
+  --ink: #3c332b;
+  --ink-light: #726457;
+  --white: #fffdf9;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 108%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  color: var(--sandy-brown-dark);
+}
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--baby-blue);
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monogram {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  color: var(--ink);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  border-color: var(--sandy-brown);
+  color: var(--sandy-brown-dark);
+}
+
+@media (max-width: 780px) {
+  .nav-toggle {
+    display: block;
+  }
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+  .site-nav.open {
+    display: block;
+  }
+  .nav-wrap {
+    flex-wrap: wrap;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0 0.5rem;
+  }
+  .site-nav li {
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--cream-dark);
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(160deg, var(--baby-blue) 0%, var(--cream) 55%, var(--sandy-brown) 140%),
+              url('../images/hero.jpg') center/cover no-repeat;
+  background-blend-mode: overlay;
+}
+
+.hero-inner {
+  background: rgba(255, 253, 249, 0.72);
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(255,255,255,0.6);
+  max-width: 640px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+  .hero-inner {
+    padding: 2rem 1.2rem;
+  }
+}
+
+.hero .eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  letter-spacing: 0.04em;
+}
+
+.hero .amp {
+  color: var(--sandy-brown-dark);
+  font-style: italic;
+  padding: 0 0.2em;
+}
+
+.hero .date-location {
+  margin-top: 1.2rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+  color: var(--ink-light);
+}
+
+.hero .cta-row {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  border: 1px solid var(--sandy-brown-dark);
+  background: var(--sandy-brown);
+  color: var(--white);
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--sandy-brown-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--sandy-brown-dark);
+}
+
+.btn-outline:hover {
+  background: var(--sandy-brown);
+  color: var(--white);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 3rem 1.2rem;
+  }
+}
+
+.section-tight {
+  max-width: 700px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 0.5rem;
+}
+
+.section-alt {
+  background: var(--white);
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.section-blue {
+  background: var(--baby-blue);
+  color: var(--ink);
+}
+
+.section-blue .eyebrow {
+  color: var(--ink);
+}
+
+/* ---------- Info card (wedding day) ---------- */
+
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .info-card,
+  .rsvp-box,
+  .message-box {
+    padding: 2rem 1.3rem;
+  }
+}
+
+.info-card .eyebrow {
+  display: block;
+}
+
+.info-card h3 {
+  font-size: 2.2rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1.2rem;
+  text-align: left;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.info-grid .label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--sandy-brown-dark);
+  margin-bottom: 0.15rem;
+}
+
+.info-grid .value {
+  font-size: 1.15rem;
+}
+
+/* ---------- Timeline (agenda) ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+@media (max-width: 480px) {
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+
+.timeline .time {
+  font-family: var(--font-display);
+  color: var(--sandy-brown-dark);
+  font-size: 1.15rem;
+}
+
+.timeline .desc {
+  font-size: 1.1rem;
+}
+
+.timeline .desc .sub {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+}
+
+/* ---------- Swatches (dress code) ---------- */
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto 3rem;
+}
+
+.swatch {
+  text-align: center;
+}
+
+.swatch .chip {
+  height: 140px;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 0.8rem;
+}
+
+.swatch .name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.swatch .hex {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  letter-spacing: 0.05em;
+}
+
+.chip-cream { background: var(--cream-dark); }
+.chip-blue { background: var(--baby-blue); }
+.chip-brown { background: var(--sandy-brown); }
+
+.image-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.image-placeholder {
+  aspect-ratio: 3 / 4;
+  border: 1px dashed var(--sandy-brown);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------- Photo blocks (general placeholders) ---------- */
+
+.photo-block {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(150deg, var(--baby-blue), var(--cream-dark));
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--cream-dark);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
+
+/* ---------- Dress code placeholder "look" cards ---------- */
+
+.look-card {
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--cream-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: var(--ink);
+}
+
+.look-card svg {
+  width: 42px;
+  height: 42px;
+  opacity: 0.85;
+}
+
+.look-card .look-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.look-1 { background: linear-gradient(150deg, var(--cream-dark), var(--baby-blue)); }
+.look-2 { background: linear-gradient(150deg, var(--baby-blue), var(--sandy-brown)); }
+.look-3 { background: linear-gradient(150deg, var(--sandy-brown), var(--cream-dark)); }
+.look-4 { background: linear-gradient(135deg, var(--cream-dark) 0%, var(--baby-blue) 50%, var(--sandy-brown) 100%); }
+
+.look-1 svg, .look-1 .look-name { color: var(--ink); }
+.look-2 svg, .look-2 .look-name { color: var(--white); }
+.look-3 svg, .look-3 .look-name { color: var(--white); }
+.look-4 svg, .look-4 .look-name { color: var(--ink); }
+
+/* ---------- Forms / RSVP ---------- */
+
+.rsvp-box {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.rsvp-box .deadline {
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem;
+  color: var(--ink-light);
+}
+
+.note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+/* ---------- Honeymoon fund ---------- */
+
+.message-box {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 3rem;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.signature {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 1.3rem;
+  color: var(--sandy-brown-dark);
+}
+
+/* ---------- Table (travel/accommodation) ---------- */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.accom-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.accom-table th, .accom-table td {
+  text-align: left;
+  padding: 0.9rem 0.8rem;
+  border-bottom: 1px solid var(--cream-dark);
+  font-size: 0.98rem;
+}
+
+.accom-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--sandy-brown-dark);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  border-top: 1px solid var(--baby-blue);
+}
+
+.site-footer .monogram {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.site-footer .date {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-light);
+}
+
+.center {
+  text-align: center;
+}
