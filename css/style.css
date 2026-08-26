@@ -24,7 +24,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 108%;
+  font-size: 130%;
 }
 
 body {
@@ -157,12 +157,12 @@ img {
   text-align: center;
   padding: 3rem 1.5rem;
   background: linear-gradient(160deg, var(--baby-blue) 0%, var(--cream) 55%, var(--sandy-brown) 140%),
-              url('../images/hero.jpg') center/cover no-repeat;
+              url('../images/wedding2.jpeg') center/cover no-repeat;
   background-blend-mode: overlay;
 }
 
 .hero-inner {
-  background: rgba(255, 253, 249, 0.72);
+  background: rgba(255, 253, 249, 0.88);
   padding: 3rem 2.5rem;
   border: 1px solid rgba(255,255,255,0.6);
   max-width: 640px;
@@ -296,6 +296,30 @@ img {
   margin: 0 auto;
 }
 
+.venue-photo {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--cream-dark);
+  margin: 1.5rem 0;
+}
+
+.venue-address {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.venue-phone {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+  margin-top: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
 @media (max-width: 480px) {
   .info-card,
   .rsvp-box,
@@ -377,57 +401,27 @@ img {
 
 /* ---------- Swatches (dress code) ---------- */
 
-.swatch-grid {
+.dresscode-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin: 0 auto 3rem;
-}
-
-.swatch {
-  text-align: center;
-}
-
-.swatch .chip {
-  height: 140px;
-  border: 1px solid rgba(0,0,0,0.08);
-  margin-bottom: 0.8rem;
-}
-
-.swatch .name {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-}
-
-.swatch .hex {
-  font-size: 0.85rem;
-  color: var(--ink-light);
-  letter-spacing: 0.05em;
-}
-
-.chip-cream { background: var(--cream-dark); }
-.chip-blue { background: var(--baby-blue); }
-.chip-brown { background: var(--sandy-brown); }
-
-.image-placeholder-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-.image-placeholder {
-  aspect-ratio: 3 / 4;
-  border: 1px dashed var(--sandy-brown);
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: var(--ink-light);
-  background-size: cover;
-  background-position: center;
+.dresscode-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--cream-dark);
+}
+
+@media (max-width: 480px) {
+  .dresscode-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
 }
 
 /* ---------- Photo blocks (general placeholders) ---------- */
@@ -443,16 +437,10 @@ img {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
-  max-width: 900px;
+  max-width: 640px;
   margin: 0 auto;
-}
-
-@media (max-width: 700px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 420px) {
@@ -462,40 +450,6 @@ img {
   }
 }
 
-/* ---------- Dress code placeholder "look" cards ---------- */
-
-.look-card {
-  aspect-ratio: 3 / 4;
-  border: 1px solid var(--cream-dark);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  color: var(--ink);
-}
-
-.look-card svg {
-  width: 42px;
-  height: 42px;
-  opacity: 0.85;
-}
-
-.look-card .look-name {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-}
-
-.look-1 { background: linear-gradient(150deg, var(--cream-dark), var(--baby-blue)); }
-.look-2 { background: linear-gradient(150deg, var(--baby-blue), var(--sandy-brown)); }
-.look-3 { background: linear-gradient(150deg, var(--sandy-brown), var(--cream-dark)); }
-.look-4 { background: linear-gradient(135deg, var(--cream-dark) 0%, var(--baby-blue) 50%, var(--sandy-brown) 100%); }
-
-.look-1 svg, .look-1 .look-name { color: var(--ink); }
-.look-2 svg, .look-2 .look-name { color: var(--white); }
-.look-3 svg, .look-3 .look-name { color: var(--white); }
-.look-4 svg, .look-4 .look-name { color: var(--ink); }
 
 /* ---------- Forms / RSVP ---------- */
 
